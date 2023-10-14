@@ -5,6 +5,11 @@ pipeline {
             args '-u root' // Optional: Run as root if necessary
         }
     }
+
+    environment {
+    DOCKER_HOST = 'tcp://dind:2375'
+}
+
     
     stages {
         stage('Build') {
