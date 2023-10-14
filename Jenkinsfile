@@ -11,7 +11,7 @@ pipeline {
             steps {
                 script {
                     // Set the DOCKER_HOST environment variable
-                    withEnv(["DOCKER_HOST=tcp://dind:2375"]) {
+                    withEnv(["DOCKER_HOST = unix:///var/run/docker.sock"]) {
                         // Inside this block, DOCKER_HOST will be set
                         // for the duration of the stage.
                     }
